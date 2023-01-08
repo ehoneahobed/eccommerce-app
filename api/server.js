@@ -5,6 +5,7 @@ require('dotenv').config();
 const cors = require('cors');
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
+const productRoute = require('./routes/product');
 
 // connecting to database
 mongoose.set('strictQuery', true);
@@ -24,3 +25,4 @@ app.use(express.json());
 
 app.use('/api/user', userRoute);
 app.use('/api/auth/', authRoute);
+app.use('./api/products/', productRoute);
